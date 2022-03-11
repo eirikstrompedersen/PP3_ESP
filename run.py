@@ -10,10 +10,10 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('crabs')
+SHEET = GSPREAD_CLIENT.open('measurements')
 
-crabs = SHEET.worksheet('crabs-2019')
+observations = SHEET.worksheet('observations_raw')
 
-data = crabs.get_all_values()
+data = observations.get_all_values()
 
 print(data)
