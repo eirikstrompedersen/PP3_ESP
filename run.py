@@ -12,15 +12,27 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('measurements')
 
-raw_obs = SHEET.worksheet('observation')
+raw_obs = SHEET.worksheet("observation")
+
+
+def file_content():
+    """
+    Give the user a insight of the attribute fields in the speadsheet
+    """
+    file_attributes = raw_obs.row_values(1)
+    print(file_attributes)
+
+def main():
+    """
+    Run the program functions
+    """
+    file_content()
 
 
 
+print("Welcome to file cleaner and validator")
+main()
 
-"""
-Test connection with worksheet
-"""
-data = raw_obs.get_all_values()
-
-print(data)
-
+#def validator_start():
+#   print("Do you wish to start validation of observations in spreadseet?")
+#validator_start()
