@@ -1,3 +1,7 @@
+"""
+To solve this assigment, documentation from gspread.org is used
+"""
+
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -20,17 +24,49 @@ def file_content():
     Give the user a insight of the attribute fields in the speadsheet
     """
     file_attributes = raw_obs.row_values(1)
+    print("The spreadsheet containt theese attribute fields:")
     print(file_attributes)
+
+
+def remove_columns():
+    """
+    Removes columns from spreadsheet
+    """
+    columns = []
+    
+
+
+
+#def field_validator():
+    """
+    Validate if any datafield does not contain data
+    """
+    
+    if 
+
+
+#def emtpy_fields():
+    """
+    Give empty data fields the "None" attribute.
+    """
+    
+
+
+
+
 
 def main():
     """
     Run the program functions
     """
     file_content()
+    print(raw_obs.get_all_records())
 
 
 
-print("Welcome to file cleaner and validator")
+
+print("Welcome to file cleaner and validator. This program will prepear your file to import into 'program XXX'\n")
+
 main()
 
 #def validator_start():
