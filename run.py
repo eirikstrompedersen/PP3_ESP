@@ -24,24 +24,3 @@ data = raw_obs.get_all_values()
 
 print(data)
 
-
-
-
-
-#def get_point_id():
-"""
-Get id for each observation in the spreadsheet
-"""
-#    id.get_all_values(id)
-#    print(id)
-
-
-
-#get_point_id()
-
-
-
-#def sort_data():
-"""
-Sorting of data
-"""
