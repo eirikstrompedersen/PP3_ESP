@@ -12,8 +12,36 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('measurements')
 
-observations = SHEET.worksheet('observations_raw')
+raw_obs = SHEET.worksheet('observation')
 
-data = observations.get_all_values()
+
+
+
+"""
+Test connection with worksheet
+"""
+data = raw_obs.get_all_values()
 
 print(data)
+
+
+
+
+
+#def get_point_id():
+"""
+Get id for each observation in the spreadsheet
+"""
+#    id.get_all_values(id)
+#    print(id)
+
+
+
+#get_point_id()
+
+
+
+#def sort_data():
+"""
+Sorting of data
+"""
