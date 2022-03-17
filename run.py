@@ -20,6 +20,9 @@ raw_obs = SHEET.worksheet("observation")
 valid = SHEET.worksheet("obs_valid")
 
 def start():
+    """
+    Ask user to type a command to start the program
+    """
     while True:
         user_execute = str(input("Please type 'Start' to run the program "))
     
