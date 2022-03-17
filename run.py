@@ -21,22 +21,18 @@ valid = SHEET.worksheet("obs_valid")
 
 def start():
     """
-    Ask user to type a command to start the program
+    Ask user to type a command to start the program.
     """
     while True:
-        user_execute = str(input("Please type 'Start' to run the program "))
-    
-        if not user_execute == "Start":
+        user_execute = str(input("Please type 'Start' to run the program \n")) 
+
+        if not user_execute == "Start":                     #Validates the user input. If input does not match requierment, printstatement launches
             print("Invalid input, please try again")
         else:
             print("Program is starting up.....")
             break
 
 
-        
-
-
-        
 def file_attributes():
     """
     Give the user a insight of the attribute fields in the speadsheet
@@ -61,7 +57,7 @@ def main():
     """
     Run the program functions
     """
-    start()
+    start()                     #Ask user to start the program with a defined command.
     file_attributes()
     copy_worksheet()
 
