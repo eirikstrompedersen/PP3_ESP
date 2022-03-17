@@ -28,7 +28,7 @@ def start():
 
         if not user_execute == "Start":                     #Validates the user input. If input does not match requierment, printstatement launches
             print("Invalid input, please try again")
-        else:
+        else:                                               #If comamnd is correct, program is allowed to contuine running.
             print("Program is starting up.....")
             break
 
