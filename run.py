@@ -19,6 +19,21 @@ SHEET = GSPREAD_CLIENT.open('measurements')
 raw_obs = SHEET.worksheet("observation")
 valid = SHEET.worksheet("obs_valid")
 
+def start():
+    while True:
+        user_execute = str(input("Please type 'Start' to run the program "))
+    
+        if not user_execute == "Start":
+            print("Invalid input, please try again")
+        else:
+            print("Program is starting up.....")
+            break
+
+
+        
+
+
+        
 def file_attributes():
     """
     Give the user a insight of the attribute fields in the speadsheet
@@ -26,17 +41,6 @@ def file_attributes():
     print("The spreadsheet containt theese attribute fields:\n")
     file_attributes = raw_obs.row_values(1)
     print(file_attributes)
-
-def start():
-    """
-    User has to input "Start" to start the operation
-    """
-    
-    try:
-        execute = str(input("\nType 'Start' here: "))
-        print("Process is starting...")
-    except ValueError:
-        print("Invalid command")
 
 
 def copy_worksheet():
@@ -54,15 +58,13 @@ def main():
     """
     Run the program functions
     """
-    file_attributes()
     start()
+    file_attributes()
     copy_worksheet()
 
-
-
-
-print("Welcome to file cleaner and validator. This program will prepear your file to import into 'program XXX'\n")
-
+print("------------------------------------------------------------------------------------------------------------")
+print("Welcome to file cleaner and validator. This program will prepear your file to import into 'program XXX'")
+print("------------------------------------------------------------------------------------------------------------")
 main()
 
 #def validator_start():
