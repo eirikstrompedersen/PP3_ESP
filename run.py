@@ -29,7 +29,7 @@ def start():
 
         if not user_execute == "Start":                     # Validates the user input. If input does not match requierment, printstatement launches.
             print("Invalid input, please try again")
-        else:                                               # If comamnd is correct, program is allowed to contuine running.
+        else:                                               # If comamnd is correct (aka 'Start'), program is allowed to contuine running.
             print("Program is starting up.....")
             break
 
@@ -50,7 +50,7 @@ def dublicate_worksheet():
     """
     print("Dublicate 'observation' in the spreadsheet...")
     raw_obs.duplicate(insert_sheet_index=1, new_sheet_name="obs_copy") # Dublicates the "observation" worksheet, and gives the dublication the name "obs_copy". Indexing the new worksheet to index 1.
-    print("Worksheet 'obs_copy' is crated")
+    print("Worksheet 'obs_copy' is created")
     obs_copy = SHEET.worksheet("obs_copy")
 
 
@@ -62,11 +62,8 @@ def main():
     dublicate_worksheet()
     file_attributes()           # Give the user information about the file attributes in the spreadsheet.
 
+
 print("-------------------------------------------------------")
 print("Welcome to file cleaner and validator. This program will \nprepear your file to import into 'program XXX'")
 print("-------------------------------------------------------")
 main()
-
-#def validator_start():
-#   print("Do you wish to start validation of observations in spreadseet?")
-#validator_start()
