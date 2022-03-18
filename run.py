@@ -19,12 +19,21 @@ SHEET = GSPREAD_CLIENT.open('measurements')
 
 raw_obs = SHEET.worksheet("observation")
 
+def file_attributes():
+    """
+    Give the user a insight of the attribute fields in the speadsheet
+    """
+    print("The spreadsheet containt theese attribute fields:\n")
+    global file_attri  # Makes the varriable global.
+    file_attri = raw_obs.row_values(1)
+    print(file_attri)
+
 def start():
     """
     Ask user to type a command to start the program.
     """
     while True:
-        user_execute = str(input("Please type 'Start' to run the program \n")) 
+        user_execute = str(input("\nPlease type 'Start' to run the program \n")) 
         """
         Validates the user input. If input does not match requierment,
         printstatement launches.
@@ -37,16 +46,6 @@ def start():
             """                                               
             print("Program is starting up.....")
             break
-
-
-def file_attributes():
-    """
-    Give the user a insight of the attribute fields in the speadsheet
-    """
-    print("The spreadsheet containt theese attribute fields:\n")
-    global file_attributes  # Makes the varriable global.
-    file_attributes = raw_obs.row_values(1)
-    print(file_attributes)
 
 
 def dublicate_worksheet():
@@ -65,22 +64,26 @@ def dublicate_worksheet():
     obs_copy = SHEET.worksheet("obs_copy")
 
 
-
 def delete_columns():
     """
     This function removes unwatned columns form the worksheet
     """
-    obs_copy.delete_columns(5,6)
-    obs_copy.delete_columns(9,17)
+    obs_copy.delete_columns(5, 6)
+    obs_copy.delete_columns(9, 17)
+    obs_copy.delete_columns(9, 15)
+
+    file_attri = obs_copy.row_values(1)
+    print("\nFile is now processed, here is the remaining file attributes: \n")
+    print(file_attri)
     
 
 def main():
     """
     Run the program functions
     """
-    #start()                         # Ask user to start the program with a defined command.
-    dublicate_worksheet()           # Dublicates the worksheet, to save the raw measuerments.
     file_attributes()                # Give the user insight in the file attributes in the spreadsheet.
+    start()                          # Ask user to start the program with a defined command.
+    dublicate_worksheet()            # Dublicates the worksheet, to save the raw measuerments.
     delete_columns()                 # Remove unwanted columns in worksheet
 
 
