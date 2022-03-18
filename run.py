@@ -16,6 +16,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('measurements')
 
+
 raw_obs = SHEET.worksheet("observation")
 
 
@@ -26,7 +27,7 @@ def start():
     while True:
         user_execute = str(input("Please type 'Start' to run the program \n")) 
 
-        if not user_execute == "Start":                     # Validates the user input. If input does not match requierment, printstatement launches
+        if not user_execute == "Start":                     # Validates the user input. If input does not match requierment, printstatement launches.
             print("Invalid input, please try again")
         else:                                               # If comamnd is correct, program is allowed to contuine running.
             print("Program is starting up.....")
@@ -42,26 +43,15 @@ def file_attributes():
     print(file_attributes)
 
 
-def get_observation_data():
+def dublicate_worksheet():
     """
-    Get all the data stored in "observation"
-    """
-    values = raw_obs.get_all_records()
-    #print(values)
-    values
-
-
-def copy_worksheet():
-    """
-    Creates a new worksheet within the spre
-    
-    Copy the data from the observation worksheet to the obs_valid worksheet.
+    Dublicates 'observations" into a new worksheet called obs_copy.
     Reasoning for doing this is to keep the raw measurments intact.
     """
-    SHEET.add_worksheet("obs_copy", 1, 1) # Creates a new worksheet within the spreadsheet
-    print("\nCopying raw data to new worksheet...")
-    
-    print("Data is successfully copied!\n")
+    print("Dublicate 'observation' in the spreadsheet...")
+    raw_obs.duplicate(insert_sheet_index=1, new_sheet_name="obs_copy") # Dublicates the "observation" worksheet, and gives the dublication the name "obs_copy". Indexing the new worksheet to index 1.
+    print("Worksheet 'obs_copy' is crated")
+    obs_copy = SHEET.worksheet("obs_copy")
 
 
 def main():
@@ -69,13 +59,12 @@ def main():
     Run the program functions
     """
     start()                     # Ask user to start the program with a defined command.
+    dublicate_worksheet()
     file_attributes()           # Give the user information about the file attributes in the spreadsheet.
-    get_observation_data()
-    copy_worksheet()
 
-print("------------------------------------------------------------------------------------------------------------")
-print("Welcome to file cleaner and validator. This program will prepear your file to import into 'program XXX'")
-print("------------------------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------")
+print("Welcome to file cleaner and validator. This program will \nprepear your file to import into 'program XXX'")
+print("-------------------------------------------------------")
 main()
 
 #def validator_start():

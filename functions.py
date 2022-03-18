@@ -14,3 +14,12 @@
     """
     value_list = raw_obs.col_values(1)
     print(value_list)
+
+
+
+#def get_observation_data():
+    """
+    Get all the data stored in "observation"
+    """
+    values = raw_obs.get_all_records()
+    values.append(obs_copy)
