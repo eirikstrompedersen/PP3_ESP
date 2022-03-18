@@ -35,7 +35,7 @@ def start():
     Ask user to type a command to start the program.
     """
     while True:
-        user_execute = str(input("\nPlease type 'Start' to run the program \n"))
+        user_execute = str(input("\nPlease type 'Start' to run the program. \n"))
         """
         Validates the user input. If input does not match requierment,
         printstatement launches.
