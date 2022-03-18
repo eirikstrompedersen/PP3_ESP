@@ -17,8 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('measurements')
 
 raw_obs = SHEET.worksheet("observation")
-valid = SHEET.worksheet("obs_valid")
-cleaned = SHEET.worksheet("obs_cleaned")
+
 
 def start():
     """
@@ -43,13 +42,25 @@ def file_attributes():
     print(file_attributes)
 
 
+def get_observation_data():
+    """
+    Get all the data stored in "observation"
+    """
+    values = raw_obs.get_all_records()
+    #print(values)
+    values
+
+
 def copy_worksheet():
     """
+    Creates a new worksheet within the spre
+    
     Copy the data from the observation worksheet to the obs_valid worksheet.
     Reasoning for doing this is to keep the raw measurments intact.
     """
+    SHEET.add_worksheet("obs_copy", 1, 1) # Creates a new worksheet within the spreadsheet
     print("\nCopying raw data to new worksheet...")
-    raw_obs.copy_to(valid)
+    
     print("Data is successfully copied!\n")
 
 
@@ -59,7 +70,7 @@ def main():
     """
     start()                     # Ask user to start the program with a defined command.
     file_attributes()           # Give the user information about the file attributes in the spreadsheet.
-    #remove()
+    get_observation_data()
     copy_worksheet()
 
 print("------------------------------------------------------------------------------------------------------------")
