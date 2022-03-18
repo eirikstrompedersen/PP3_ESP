@@ -18,7 +18,6 @@ SHEET = GSPREAD_CLIENT.open('measurements')
 
 
 raw_obs = SHEET.worksheet("observation")
-obs_copy = SHEET.worksheet("obs_copy") # skal fjernes før deployment
 
 def start():
     """
@@ -45,13 +44,13 @@ def file_attributes():
     Give the user a insight of the attribute fields in the speadsheet
     """
     print("The spreadsheet containt theese attribute fields:\n")
-    global file_attributes()
+    global file_attributes  # Makes the varriable global.
     file_attributes = raw_obs.row_values(1)
     print(file_attributes)
 
 
 def dublicate_worksheet():
-    global obs_copy         # Makes the "obs_copy" a global variable.
+    global obs_copy         # Makes the varriable global.
     """
     Dublicates 'observations" into a new worksheet called obs_copy.
     Reasoning for doing this is to keep the raw measurments intact.
@@ -67,22 +66,22 @@ def dublicate_worksheet():
 
 
 
-def remove():
+def delete_columns():
     """
     This function removes unwatned columns form the worksheet
     """
+    obs_copy.delete_columns(5,6)
+    obs_copy.delete_columns(9,17)
     
-    
-
 
 def main():
     """
     Run the program functions
     """
     #start()                         # Ask user to start the program with a defined command.
-    #dublicate_worksheet()           # Dublicates the worksheet, to save the raw measuerments.
-    #file_attributes()               # Give the user insight in the file attributes in the spreadsheet.
-    remove()                        # Remove unwanted columns in worksheet
+    dublicate_worksheet()           # Dublicates the worksheet, to save the raw measuerments.
+    file_attributes()                # Give the user insight in the file attributes in the spreadsheet.
+    delete_columns()                 # Remove unwanted columns in worksheet
 
 
 print("-------------------------------------------------------")
