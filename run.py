@@ -18,6 +18,7 @@ SHEET = GSPREAD_CLIENT.open('measurements')
 
 raw_obs = SHEET.worksheet("observation")
 valid = SHEET.worksheet("obs_valid")
+cleaned = SHEET.worksheet("obs_cleaned")
 
 def start():
     """
@@ -26,9 +27,9 @@ def start():
     while True:
         user_execute = str(input("Please type 'Start' to run the program \n")) 
 
-        if not user_execute == "Start":                     #Validates the user input. If input does not match requierment, printstatement launches
+        if not user_execute == "Start":                     # Validates the user input. If input does not match requierment, printstatement launches
             print("Invalid input, please try again")
-        else:                                               #If comamnd is correct, program is allowed to contuine running.
+        else:                                               # If comamnd is correct, program is allowed to contuine running.
             print("Program is starting up.....")
             break
 
@@ -48,8 +49,7 @@ def copy_worksheet():
     Reasoning for doing this is to keep the raw measurments intact.
     """
     print("\nCopying raw data to new worksheet...")
-    get_all = raw_obs.get_all_values()
-    get_all.append("valid")
+    raw_obs.copy_to(valid)
     print("Data is successfully copied!\n")
 
 
@@ -57,8 +57,9 @@ def main():
     """
     Run the program functions
     """
-    start()                     #Ask user to start the program with a defined command.
-    file_attributes()
+    start()                     # Ask user to start the program with a defined command.
+    file_attributes()           # Give the user information about the file attributes in the spreadsheet.
+    #remove()
     copy_worksheet()
 
 print("------------------------------------------------------------------------------------------------------------")
