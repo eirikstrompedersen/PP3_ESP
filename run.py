@@ -35,7 +35,7 @@ def start():
     Ask user to type a command to start the program.
     """
     while True:
-        user_execute = str(input("\nPlease type 'Start' to run the program. \n"))
+        user_execute = str(input("\nPlease type 'Start' to run. \n"))
         """
         Validates the user input. If input does not match requierment,
         printstatement launches.
@@ -88,13 +88,17 @@ def main():
     """
     Run the program functions
     """
-    file_attributes()                # Give the user insight in the file attributes in the spreadsheet.
-    start()                          # Ask user to start the program with a defined command.
-    dublicate_worksheet()            # Dublicates the worksheet, to save the raw measuerments.
-    delete_columns()                 # Remove unwanted columns in worksheet 
-
+    file_attributes()
+    # Give the user insight in the file attributes in the spreadsheet.
+    start()
+    # Ask user to start the program with a defined command.
+    dublicate_worksheet()
+    # Dublicates the worksheet, to save the raw measuerments.
+    delete_columns()
+    # Remove unwanted columns in worksheet
 
 print("-------------------------------------------------------")
-print("Welcome to file cleaner and validator. This program will \nprepear your file to import into 'program XXX'")
+print("Welcome to file cleaner and validator.)
+print("This program will \nprepear your file to import into 'program XXX'")
 print("-------------------------------------------------------")
 main()
