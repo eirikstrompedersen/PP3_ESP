@@ -26,10 +26,16 @@ def start():
     """
     while True:
         user_execute = str(input("Please type 'Start' to run the program \n")) 
-
-        if not user_execute == "Start":                     # Validates the user input. If input does not match requierment, printstatement launches.
+        """
+        Validates the user input. If input does not match requierment,
+        printstatement launches.
+        """
+        if not user_execute == "Start":                 
             print("Invalid input, please try again")
-        else:                                               # If comamnd is correct (aka 'Start'), program is allowed to contuine running.
+        else:
+            """
+            If comamnd is correct (aka 'Start'), program is allowed to contuine running.
+            """                                               
             print("Program is starting up.....")
             break
 
@@ -49,7 +55,11 @@ def dublicate_worksheet():
     Reasoning for doing this is to keep the raw measurments intact.
     """
     print("Dublicate 'observation' in the spreadsheet...")
-    raw_obs.duplicate(insert_sheet_index=1, new_sheet_name="obs_copy") # Dublicates the "observation" worksheet, and gives the dublication the name "obs_copy". Indexing the new worksheet to index 1.
+    """
+    Dublicates the "observation" worksheet, and gives the dublication
+    the name "obs_copy". Indexing the new worksheet to index 1 in the spreadsheet.
+    """
+    raw_obs.duplicate(insert_sheet_index=1, new_sheet_name="obs_copy")
     print("Worksheet 'obs_copy' is created")
     obs_copy = SHEET.worksheet("obs_copy")
 
@@ -58,9 +68,9 @@ def main():
     """
     Run the program functions
     """
-    start()                     # Ask user to start the program with a defined command.
-    dublicate_worksheet()
-    file_attributes()           # Give the user information about the file attributes in the spreadsheet.
+    start()               # Ask user to start the program with a defined command.
+    dublicate_worksheet() # Dublicates the worksheet, to save the raw measuerments.
+    file_attributes()     # Give the user insight in the file attributes in the spreadsheet.
 
 
 print("-------------------------------------------------------")
