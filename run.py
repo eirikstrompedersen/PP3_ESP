@@ -99,7 +99,7 @@ def main():
     # Remove unwanted columns in worksheet
 
 print("-------------------------------------------------------")
-print("Welcome to file cleaner and validator.)
+print("Welcome to file cleaner and validator")
 print("This program will \nprepear your file to import into 'program XXX'")
 print("-------------------------------------------------------")
 main()
