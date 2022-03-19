@@ -1,5 +1,6 @@
 """
 To solve this assigment, documentation from gspread.org is used.
+Link to spreadsheet is: https://docs.google.com/spreadsheets/d/1uzTl6E5M00iVEgspe1o8S34R3D7zXS-9u51n-O4VUVU/edit?usp=sharing
 """
 
 import gspread

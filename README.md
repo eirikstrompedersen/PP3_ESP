@@ -1,31 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PP3-ESP
+(Developer: Eirik Strøm Pedersen)
 
-Welcome eirikstrompedersen,
+## Table of content
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+1. [Project Goals](#project-goals)
+    1. [Background](#background) 
+    2. [Goals](#user-goals)
+2. [User Experience](#user-experience)
+    1. [User Requrements and Expectations](#user-requrements-and-expectations)
+3. [Planning](#planning)
+    1. [Flowchart](#flowchart)
+4. [Technologies Used](#technologies-used)
+    1. [Languages](#languages)
+    2. [Frameworks & Tools](#frameworks-&-tools)
+5. [Features](#features)
+    1. [Functions](#functions)
+6. [Testing](#validation)
+    1. [Function testing](#function-testing)
+    2. [Validation](#validation)
+8. [Bugs](#Bugs)
+    1. [Known bugs](#know-bugs)
+    2. [Other issues](#other-issues)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
+11. [Acknowledgements](#acknowledgements)
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Project goals
 
-## Creating the Heroku app
+### Background
+As a professional withn the survey industry (land surveying),I come across very many different formats in a weekly basis. Some of them are different file formats, some of them are basic text. Problem is there is hundrets of different formating used on basic text or spreadsheet documents. I want to make an app that cleans up a text file, and make the spreadsheet ready for me to use in a software.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Goals
+- Make a program to handle information stored in a google spreadsheet
+- Manipulatin the existing spreadsheet
+- Interact with the user via terminal
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## User Experience
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### User Requrements and Expectations
+- The app should explain the process to the user in the terminal
+- User interaction should be self explanatory
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Planning
 
-Connect your GitHub repository and deploy as normal.
+### Flowchart
+![flowchart](docs/flowchart.jpg)
 
-## Constraints
+## Technologies used
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+### Languages
+- Python 3
 
------
-Happy coding!
+### Framework & tools
+- Gspread (https://docs.gspread.org/en/v5.2.0/)
+- GitHub
+- GitPod
+- vscode
+- Lucidchart
+
+## Features
+
+### Functions
+- Functions is described in the file using comments.
+
+## Testing
+
+### Function testing
+- The application was tested throughout the developemnt process by use of terminal (gitpod.io)
+
+### Validation
+![PEP8](docs/PEP8-validation.jpg)
+
+- PEP8 (http://pep8online.com/) was used to detect bad writing and errors in the python code.
+
+## Bugs
+
+### Known bugs
+- No bugs detected
+
+### Other issues
+- No other issues detected
+
+## Deployment
+- Depolyment via Heroku (heroku.com) as instructed by CI
+- Code is accessible on my github: https://github.com/eirikstrompedersen/PP3_ESP
+- Google spreadsheet link: https://docs.google.com/spreadsheets/d/1uzTl6E5M00iVEgspe1o8S34R3D7zXS-9u51n-O4VUVU/edit?usp=sharing. Access to spreadsheet is given to everyone who holds the link.
+
+## Credits
+
+## Acknowledgements
+- Thanks to my girlfriend for the patience during the procjet
+- Thanks to my mentor for support
